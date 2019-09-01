@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../restaurantcity/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.menuAdministrativo.VisualizarReporteController">
+   <children>
+      <AnchorPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="800.0" />
+      <Label layoutY="512.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="800.0" style="-fx-background-color: #222222;" />
+      <JFXButton buttonType="RAISED" layoutX="666.0" layoutY="538.0" onAction="#enviarReporte" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 15;" styleClass="botonNaranjo" text="Enviar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="531.0" layoutY="538.0" onAction="#guardarReporte" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 15;" styleClass="botonAzul" text="Guardar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

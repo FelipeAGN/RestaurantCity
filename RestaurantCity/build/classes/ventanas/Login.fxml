@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.LoginController">
+    <children>
+        <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1024.0" style="-fx-background-color: #000000;" stylesheets="@../restaurantcity/style.css">
+            <children>
+                <AnchorPane fx:id="anchorRoot" layoutX="700.0" prefHeight="650.0" prefWidth="324.0" style="-fx-background-color: #222222;">
+                    <children>
+                        <Text fill="#00a8ff" layoutX="85.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN" wrappingWidth="155.5302734375">
+                            <font>
+                                <Font name="Liberation Sans" size="46.0" />
+                            </font>
+                        </Text>
+                  <Label fx:id="advertencia" layoutX="21.0" layoutY="297.0" prefHeight="40.0" prefWidth="289.0" textFill="RED">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="16.0" />
+                     </font></Label>
+                  <JFXTextField fx:id="usuario" focusColor="#00a8ff" layoutX="53.0" layoutY="195.0" prefHeight="25.0" prefWidth="219.0" promptText="Username" style="-fx-text-inner-color: white;">
+                     <font>
+                        <Font name="Liberation Mono Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="contraseña" focusColor="#00a8ff" layoutX="52.0" layoutY="258.0" prefHeight="24.0" prefWidth="220.0" promptText="Password" style="-fx-text-inner-color: white;">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </JFXPasswordField>
+                  <JFXButton buttonType="RAISED" defaultButton="true" layoutX="188.0" layoutY="337.0" onAction="#verificarDatos" prefHeight="38.0" prefWidth="99.0" style="-fx-background-radius: 15;" styleClass="botonAzul" text="Log In" textFill="WHITE">
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font name="Liberation Mono Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton layoutX="211.0" layoutY="564.0" onAction="#finalizarPrograma" prefHeight="39.0" prefWidth="99.0" style="-fx-background-radius: 15;" styleClass="botonRojo" text="Salir" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Mono Bold" size="20.0" />
+                     </font>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                    </children></AnchorPane>
+                <ImageView fitHeight="650.0" fitWidth="700.0">
+                    <image>
+                        <Image url="@../imagenes/fondo1.jpg" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

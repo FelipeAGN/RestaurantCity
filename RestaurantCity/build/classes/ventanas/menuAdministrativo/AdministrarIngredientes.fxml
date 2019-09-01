@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1024.0" style="-fx-background-color: #222222;" stylesheets="@../../restaurantcity/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.menuAdministrativo.AdministrarIngredientesController">
+   <children>
+      <TableView fx:id="tabla" layoutX="255.0" layoutY="112.0" onMouseClicked="#habilitarBotonEliminar" prefHeight="320.0" prefWidth="550.0">
+         <columns>
+            <TableColumn fx:id="columnaNombre" onEditCommit="#modificarNombre" prefWidth="204.0" text="Nombre" />
+            <TableColumn fx:id="columnaID" minWidth="5.0" prefWidth="123.0" text="ID" />
+            <TableColumn fx:id="columnaStock" minWidth="0.0" onEditCommit="#modificarStock" prefWidth="112.0" text="Stock" />
+            <TableColumn fx:id="columnaUnidad" prefWidth="110.0" text="Unidad" />
+         </columns>
+      </TableView>
+      <TextField fx:id="nombre" alignment="CENTER" layoutX="255.0" layoutY="447.0" prefHeight="32.0" prefWidth="239.0" promptText="Nombre" style="-fx-background-radius: 10;">
+         <font>
+            <Font name="Liberation Sans Bold" size="17.0" />
+         </font></TextField>
+      <TextField fx:id="stock" alignment="CENTER" layoutX="512.0" layoutY="447.0" prefHeight="32.0" prefWidth="136.0" promptText="Stock" style="-fx-background-radius: 10;">
+         <font>
+            <Font name="Liberation Sans Bold" size="17.0" />
+         </font></TextField>
+      <ComboBox fx:id="unidades" layoutX="669.0" layoutY="447.0" prefHeight="32.0" prefWidth="136.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-cursor: hand;" />
+      <JFXButton buttonType="RAISED" cancelButton="true" layoutX="14.0" layoutY="14.0" onAction="#cargarVentanaAnterior" prefHeight="42.0" prefWidth="126.0" style="-fx-background-color: #15A14A; -fx-background-radius: 20; -fx-border-color: #FFFFFF; -fx-border-radius: 20; -fx-border-width: 2.7;" text="🢀 VOLVER" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <Label layoutX="270.0" layoutY="35.0" text="Administrar Ingredientes" textFill="#00a8ff">
+         <font>
+            <Font name="Liberation Sans Bold" size="44.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="451.0" layoutY="505.0" onAction="#agregarIngrediente" prefHeight="21.0" prefWidth="140.0" style="-fx-background-radius: 15;" styleClass="botonVerde" text="Agregar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="botonEliminar" buttonType="RAISED" layoutX="655.0" layoutY="505.0" onAction="#eliminarIngrediente" prefHeight="38.0" prefWidth="140.0" style="-fx-background-radius: 15;" styleClass="botonRojo" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="828.0" layoutY="597.0" onAction="#guardarInventario" prefHeight="39.0" prefWidth="182.0" style="-fx-background-radius: 15;" styleClass="botonAzul" text="Exportar PDF" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

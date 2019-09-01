@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="panel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1024.0" style="-fx-background-color: #222222;" stylesheets="@../restaurantcity/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.MenuAdministradorController">
+   <children>
+      <Label layoutX="229.0" layoutY="67.0" text="MENU ADMINISTRADOR" textFill="#ff6600">
+         <font>
+            <Font name="Liberation Sans Bold" size="50.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" cancelButton="true" layoutX="14.0" layoutY="14.0" onAction="#cargarVentanaAnterior" prefHeight="42.0" prefWidth="126.0" style="-fx-background-color: #15A14A; -fx-background-radius: 20; -fx-border-color: #FFFFFF; -fx-border-radius: 20; -fx-border-width: 2.7;" text="🢀 VOLVER" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <HBox layoutX="258.0" layoutY="147.0" prefHeight="100.0" prefWidth="316.0" spacing="8.0">
+         <children>
+            <AnchorPane fx:id="facebook" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarAdministrarAlimentos" prefHeight="120.0" prefWidth="260.0" styleClass="panel">
+               <children>
+                  <Label layoutX="14.0" layoutY="76.0" prefHeight="30.0" prefWidth="146.0" text="Alimentos" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="154.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/alimentos.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane fx:id="mail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarAdministrarBebestibles" prefHeight="120.0" prefWidth="260.0" styleClass="panel">
+               <children>
+                  <Label layoutX="14.0" layoutY="79.0" prefHeight="27.0" prefWidth="146.0" text="Bebestibles" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/bebestibles.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="258.0" layoutY="274.0" prefHeight="100.0" prefWidth="316.0" spacing="8.0">
+         <children>
+            <AnchorPane fx:id="facebook1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarAdministrarIngredientes" prefHeight="120.0" prefWidth="260.0" styleClass="panel">
+               <children>
+                  <Label layoutX="14.0" layoutY="79.0" prefHeight="27.0" prefWidth="146.0" text="Ingredientes" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/ingredientes.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane fx:id="mail1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarAdministrarMesas" prefHeight="120.0" prefWidth="260.0" styleClass="panel">
+               <children>
+                  <Label layoutX="14.0" layoutY="79.0" prefHeight="26.0" prefWidth="93.0" text="Mesas" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="146.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/mesas.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="258.0" layoutY="403.0" prefHeight="100.0" prefWidth="316.0" spacing="8.0">
+         <children>
+            <AnchorPane fx:id="facebook11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarReportes" prefHeight="120.0" prefWidth="260.0" styleClass="panel">
+               <children>
+                  <Label layoutX="14.0" layoutY="79.0" prefHeight="27.0" prefWidth="113.0" text="Reportes" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/reportes.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane fx:id="mail11" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="260.0" styleClass="panel">
+               <children>
+                  <Label layoutX="14.0" layoutY="79.0" prefHeight="27.0" prefWidth="113.0" text="Opciones" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="152.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/opciones.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <JFXButton fx:id="botonGuardar" buttonType="RAISED" layoutX="716.0" layoutY="580.0" onAction="#guardarCambios" prefHeight="21.0" prefWidth="140.0" style="-fx-background-radius: 15;" styleClass="botonVerde" text="Guardar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="870.0" layoutY="580.0" onAction="#finalizarPrograma" prefHeight="38.0" prefWidth="140.0" style="-fx-background-radius: 15;" styleClass="botonRojo" text="Salir" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

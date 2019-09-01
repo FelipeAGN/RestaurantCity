@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="panel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1024.0" style="-fx-background-color: #222222;" stylesheets="@../../restaurantcity/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.menuAdministrativo.ReportesController">
+   <children>
+      <JFXButton buttonType="RAISED" cancelButton="true" layoutX="14.0" layoutY="14.0" onAction="#cargarVentanaAnterior" prefHeight="42.0" prefWidth="126.0" style="-fx-background-color: #15A14A; -fx-background-radius: 20; -fx-border-color: #FFFFFF; -fx-border-radius: 20; -fx-border-width: 2.7;" text="🢀 VOLVER" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <Label layoutX="417.0" layoutY="35.0" text="Reportes" textFill="#00a8ff">
+         <font>
+            <Font name="Liberation Sans Bold" size="44.0" />
+         </font>
+      </Label>
+      <HBox layoutX="249.0" layoutY="122.0" prefHeight="200.0" prefWidth="528.0" spacing="8.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarGraficoAlimentos" prefHeight="200.0" prefWidth="260.0" styleClass="panelNaranjo">
+               <children>
+                  <Label layoutX="57.0" layoutY="145.0" prefHeight="41.0" prefWidth="146.0" text="Alimentos" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="80.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/alimentos.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarGraficoBebestibles" prefHeight="200.0" prefWidth="260.0" styleClass="panelNaranjo">
+               <children>
+                  <Label layoutX="45.0" layoutY="145.0" prefHeight="41.0" prefWidth="170.0" text="Bebestibles" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="80.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/bebestibles.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="249.0" layoutY="329.0" prefHeight="200.0" prefWidth="528.0" spacing="8.0">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#cargarGraficoMesas" prefHeight="200.0" prefWidth="527.0" styleClass="panelNaranjo">
+               <children>
+                  <Label layoutX="57.0" layoutY="59.0" prefHeight="82.0" prefWidth="247.0" text="Ventas" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Sans Bold" size="72.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="126.0" layoutX="357.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../imagenes/reportes.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

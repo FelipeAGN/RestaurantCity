@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1024.0" style="-fx-background-color: #222222;" stylesheets="@../../restaurantcity/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.menuVentas.AtenderMesaController">
+   <children>
+      <Label layoutX="387.0" layoutY="45.0" prefHeight="51.0" prefWidth="203.0" text="Mesa N°: " textFill="#00a8ff">
+         <font>
+            <Font name="Liberation Sans Bold" size="44.0" />
+         </font>
+      </Label>
+      <Label fx:id="numero" layoutX="579.0" layoutY="45.0" prefHeight="51.0" prefWidth="49.0" textFill="WHITE">
+         <font>
+            <Font name="Liberation Sans Bold" size="44.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablaAlimentos" layoutX="83.0" layoutY="140.0" onMouseClicked="#habilitarBotonEliminarAlimento" prefHeight="240.0" prefWidth="397.0">
+        <columns>
+          <TableColumn fx:id="columnaAlimentosNombre" prefWidth="267.0" text="Nombre" />
+          <TableColumn fx:id="columnaAlimentosPrecio" prefWidth="129.0" text="Precio" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tablaBebestibles" layoutX="554.0" layoutY="140.0" onMouseClicked="#habilitarBotonEliminarBebestible" prefHeight="240.0" prefWidth="397.0">
+         <columns>
+            <TableColumn fx:id="columnaBebestiblesNombre" prefWidth="267.0" text="Nombre" />
+            <TableColumn fx:id="columnaBebestiblesPrecio" prefWidth="129.0" text="Precio" />
+         </columns>
+      </TableView>
+      <Label layoutX="184.0" layoutY="96.0" prefHeight="44.0" prefWidth="166.0" text="Alimentos" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="665.0" layoutY="96.0" prefHeight="44.0" prefWidth="188.0" text="Bebestibles" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="28.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="listaAlimentos" layoutX="83.0" layoutY="414.0" prefHeight="26.0" prefWidth="258.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+      <ComboBox fx:id="listaBebestibles" layoutX="554.0" layoutY="414.0" prefHeight="26.0" prefWidth="258.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+      <Label fx:id="subTotal" layoutX="283.0" layoutY="552.0" prefHeight="47.0" prefWidth="225.0" textFill="WHITE">
+         <font>
+            <Font name="Liberation Sans Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="555.0" text="SubTotal:" textFill="#00a8ff">
+         <font>
+            <Font name="Liberation Mono Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="555.0" text="\$" textFill="LIME">
+         <font>
+            <Font name="Liberation Mono Bold" size="32.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="680.0" layoutY="556.0" onAction="#cancelarVenta" prefHeight="39.0" prefWidth="134.0" style="-fx-background-radius: 15;" styleClass="botonNaranjo" text="Cancelar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="852.0" layoutY="556.0" onAction="#cargarDividirCuenta" prefHeight="39.0" prefWidth="134.0" style="-fx-background-radius: 15;" styleClass="botonAzul" text="Vender" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="350.0" layoutY="407.0" onAction="#agregarAlimento" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 15;" styleClass="botonVerde" text="Agregar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="botonEliminarAlimento" buttonType="RAISED" layoutX="350.0" layoutY="455.0" onAction="#eliminarAlimento" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 15;" styleClass="botonRojo" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="826.0" layoutY="407.0" onAction="#agregarBebestible" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 15;" styleClass="botonVerde" text="Agregar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="botonEliminarBebestible" buttonType="RAISED" layoutX="826.0" layoutY="455.0" onAction="#eliminarBebestible" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 15;" styleClass="botonRojo" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" cancelButton="true" layoutX="14.0" layoutY="14.0" onAction="#cargarVentanaAnterior" prefHeight="42.0" prefWidth="126.0" style="-fx-background-color: #15A14A; -fx-background-radius: 20; -fx-border-color: #FFFFFF; -fx-border-radius: 20; -fx-border-width: 2.7;" text="🢀 VOLVER" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

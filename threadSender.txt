@@ -1,0 +1,12 @@
+import javatutorials.javamail.JavaMailUtil;
+import javax.mail.MessagingException;
+
+public class JavaMain {
+
+    public static void main(String[] args) throws MessagingException {
+        
+        // PARAMETRO 1 = EMAIL DE RECEPCION, 2 = ENVIADOR, 3= CONTRASEÑA ENVIADOR    
+   //     JavaMailUtil.sendMail("felipe.agn98@gmail.com", "" , "");
+    }
+    
+}

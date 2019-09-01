@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #222222;" stylesheets="@../../restaurantcity/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.menuVentas.PagarController">
+   <children>
+      <JFXRadioButton fx:id="botonCheque" layoutX="112.0" layoutY="89.0" onAction="#seleccionarBotonCheque" prefHeight="17.0" prefWidth="21.0" selected="true" />
+      <JFXRadioButton fx:id="botonCredito" layoutX="228.0" layoutY="89.0" onAction="#seleccionarBotonCredito" prefHeight="17.0" prefWidth="21.0" />
+      <JFXRadioButton fx:id="botonDebito" layoutX="350.0" layoutY="89.0" onAction="#seleccionarBotonDebito" prefHeight="17.0" prefWidth="21.0" />
+      <JFXRadioButton fx:id="botonEfectivo" layoutX="470.0" layoutY="89.0" onAction="#seleccionarBotonEfectivo" prefHeight="17.0" prefWidth="21.0" />
+      <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="441.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/efectivo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="201.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/credito.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="319.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/debito.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="83.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/cheque.png" />
+         </image>
+      </ImageView>
+      <JFXToggleButton fx:id="botonAgregarPropina" layoutX="311.0" layoutY="117.0" onAction="#accionAgregarPropina" prefHeight="58.0" prefWidth="61.0" toggleColor="#00a8ff" toggleLineColor="#49c5ff" />
+      <Label layoutX="75.0" layoutY="123.0" prefHeight="46.0" prefWidth="265.0" text="Agregar Propina:" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelOpcion" layoutX="376.0" layoutY="123.0" prefHeight="46.0" prefWidth="51.0" text="No" textFill="#f01320">
+         <font>
+            <Font name="Liberation Mono Bold" size="27.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="botonPropinaSugerida" layoutX="95.0" layoutY="200.0" onAction="#seleccionarPropinaSugerida" prefHeight="17.0" prefWidth="21.0" selected="true" />
+      <JFXRadioButton fx:id="botonPropinaOtroMonto" layoutX="350.0" layoutY="200.0" onAction="#seleccionarPropinaOtroMonto" prefHeight="17.0" prefWidth="21.0" />
+      <Label layoutX="52.0" layoutY="272.0" prefHeight="46.0" prefWidth="197.0" text="Monto Total:" textFill="#00a8ff">
+         <font>
+            <Font name="Liberation Mono Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="272.0" prefHeight="46.0" prefWidth="22.0" text="\$" textFill="LIME">
+         <font>
+            <Font name="Liberation Mono Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTotal" layoutX="274.0" layoutY="272.0" prefHeight="46.0" prefWidth="156.0" textFill="WHITE">
+         <font>
+            <Font name="Liberation Sans Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="122.0" layoutY="186.0" prefHeight="46.0" prefWidth="97.0" text="10% - $ " textFill="#bfbfbf">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPropina" layoutX="207.0" layoutY="186.0" prefHeight="46.0" prefWidth="144.0" textFill="#bfbfbf">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="campoMontoPropina" focusColor="LIME" layoutX="376.0" layoutY="187.0" prefHeight="44.0" prefWidth="127.0" style="-fx-text-inner-color: #bfbfbf;">
+         <font>
+            <Font name="Liberation Mono" size="20.0" />
+         </font></JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="424.0" layoutY="334.0" onAction="#pagar" prefHeight="25.0" prefWidth="140.0" style="-fx-background-radius: 15;" styleClass="botonVerde" text="Pagar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="49.0" layoutY="334.0" onAction="#cerrarVentana" prefHeight="25.0" prefWidth="140.0" style="-fx-background-radius: 15;" styleClass="botonNaranjo" text="Cancelar" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
